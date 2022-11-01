@@ -50,11 +50,23 @@ app.get('/api/persons/:id', (request, response) => {
 
   app.post('/api/persons', (request, response) => {
     const body = request.body
-    if (!body.name || !body.number) {
+    if (!body.name) {
       return response.status(400).json({ 
-        error: 'content missing' 
+        error: 'The name is missing' 
       })
     }
+    if (!body.number) {
+      return response.status(400).json({ 
+        error: 'The number is missing' 
+      })
+    }
+    let verifyName = persons.filter(person => body.name === person.name)
+    if (verifyName.length !== 0 ) {
+      return response.status(400).json({ 
+        error: 'The name must be unique' 
+      })
+    }
+
     const person = {
       id: Math.floor(Math.random()*100000),
       name: body.name,
