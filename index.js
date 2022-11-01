@@ -29,7 +29,7 @@ app.get('/api/persons', (request, response) => {
 })
 
 app.get('/api/info', (request, response) => {
-  let personsNumber = `Phonebook has info for ${persons.length} people. <br> ${new Date()})`
+  let personsNumber = `Phonebook has info for ${persons.length} people. <br> ${new Date()}`
   
   response.send(personsNumber)
 })
