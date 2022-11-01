@@ -27,6 +27,9 @@ let persons = [
         }
 ]
 
+morgan.token('data', function getData(request, response) 
+{return JSON.stringify({name: request.body.name, number: request.body.number})})
+app.use(morgan(':data'))
 
 app.get('/api/persons', (request, response) => {
   response.json(persons)
@@ -76,9 +79,10 @@ app.get('/api/persons/:id', (request, response) => {
       number: body.number,
     }
     persons = persons.concat(person)
-    console.log(request.headers)
     response.json(person)
   })
+
+ 
 
 app.get('/api/info', (request, response) => {
   let personsNumber = `Phonebook has info for ${persons.length} people. <br> ${new Date()}`
