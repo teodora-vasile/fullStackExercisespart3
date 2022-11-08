@@ -19,7 +19,10 @@ const personSchema = new mongoose.Schema({
 const Person = mongoose.model('Person', personSchema)
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 const person = new Person({
  name: "vasa",
  number: "00192121"
@@ -30,6 +33,9 @@ const person = new Person({
     mongoose.connection.close()
   })
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 if (process.argv.length > 3){
 mongoose
