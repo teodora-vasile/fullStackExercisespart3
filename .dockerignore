@@ -2,3 +2,7 @@ Dockerfile
 .dockerignore
 node_modules
 .git
+<<<<<<< Updated upstream
+=======
+.env
+>>>>>>> Stashed changes

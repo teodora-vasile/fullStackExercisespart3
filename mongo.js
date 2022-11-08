@@ -18,6 +18,19 @@ const personSchema = new mongoose.Schema({
 
 const Person = mongoose.model('Person', personSchema)
 
+<<<<<<< Updated upstream
+=======
+const person = new Person({
+ name: "vasa",
+ number: "00192121"
+})
+
+ person.save().then(result => {
+    console.log('person saved!')
+    mongoose.connection.close()
+  })
+
+>>>>>>> Stashed changes
 if (process.argv.length > 3){
 mongoose
   .connect(url)
